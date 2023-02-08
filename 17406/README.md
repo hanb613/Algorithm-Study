@@ -3,7 +3,7 @@
 ```java
 static void solve(int n) { // 가능한 Point들의 순열을 selected 리스트에 넣음 
 		if(n==list.size()) {
-			for(Point s : selected) { // 선택된 회전 조합들을 순회하며 rotate 수행
+			for(Point s : selected) { // 선택된 Point 순열을 이용하여 rotate 수행
 				rotate_top(s); // 회전 시작
 			}
 			int tmp = calc(); // rotate완료된 배열에서의 값을 계산

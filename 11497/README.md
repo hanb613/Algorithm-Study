@@ -1,6 +1,6 @@
 11497 통나무 건너뛰기
 ===================
-# 문제
+## 문제
  N개의 통나무를 원형으로 세워놓고 건더뛴다. 이때 각 인접한 통나무의 높이 차가 최소가 되게 하려 한다.
 통나무 건너뛰기의 난이도는 인접한 두 통나무 간의 높이의 차의 최댓값으로 결정된다.
 배열 [2, 9, 7, 4, 5]의 난이도는 |2-9| = 7이다.
@@ -12,15 +12,15 @@
 ![image](https://user-images.githubusercontent.com/57450244/217814948-9fee84db-d1e4-43d6-960a-04ab650ee577.png)
    
    
-## 입력
+### 입력
 첫 줄에 테스트 케이스 수 T
 이어지는 각 줄마다 첫 줄에 통나무의 개수를 나타내는 정수 N (5 <= N <= 10,000)
 둘째 줄에 각 통나무의 높이를 나타내는 정수 L (1 <= L_i <= 100,000)
-## 출력
+### 출력
 각 테스트 케이스마다 한 줄에 주어진 통나무들로 만들 수 있는 최소 난이도를 출력
    
    
-# 접근 방법
+## 접근 방법
 1. 인접한 숫자의 차가 적어야 한다.
 2. 가장 첫 번째 숫자와 마지막 숫자도 인접한다.
 ![11497-2](https://user-images.githubusercontent.com/57450244/217818104-eba33f08-214a-46bc-b999-b7239ebb71f6.jpg)
@@ -30,4 +30,17 @@
    
    
    
-   
+<pre>
+<code>
+   Arrays.sort(arr); // 오름차순
+			int max = 0; // 최소 난이도
+			int first = arr[N-1] - arr[N-2];
+			int second = arr[N-1] - arr[N-3];
+			max = first > second ? first : second;
+			for(int i = (N-2); i >= 2; i--) {
+				max = max > arr[i] - arr[i-2] ? max : arr[i] - arr[i-2];
+			}
+			max = max > arr[1] - arr[0] ? max : arr[1] - arr[0];
+			System.out.println(max);
+</code>
+</pre>

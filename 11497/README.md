@@ -33,14 +33,14 @@
 <pre>
 <code>
    Arrays.sort(arr); // 오름차순
-			int max = 0; // 최소 난이도
-			int first = arr[N-1] - arr[N-2];
-			int second = arr[N-1] - arr[N-3];
-			max = first > second ? first : second;
-			for(int i = (N-2); i >= 2; i--) {
-				max = max > arr[i] - arr[i-2] ? max : arr[i] - arr[i-2];
-			}
-			max = max > arr[1] - arr[0] ? max : arr[1] - arr[0];
-			System.out.println(max);
+   int max = 0; // 최소 난이도
+   int first = arr[N-1] - arr[N-2];
+   int second = arr[N-1] - arr[N-3];
+   max = first > second ? first : second;
+   for(int i = (N-2); i >= 2; i--) {
+      max = max > arr[i] - arr[i-2] ? max : arr[i] - arr[i-2];
+   }
+   max = max > arr[1] - arr[0] ? max : arr[1] - arr[0];
+   System.out.println(max);
 </code>
 </pre>
